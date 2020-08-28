@@ -53,17 +53,23 @@ class CarritoController extends Controller
         $request->validate(
             [
                 'id_producto' => 'required',
-                'cantidad_producto' => 'required',
-                
+                'cantidad_producto' => 'required',            
             ]);
+
         $intId=(int)$request->id_producto;
         $intCantidad=(int)$request->cantidad_producto;
-            
+        
+        
 
         $model = new Carrito;
         $model->id_cliente = $id;
         $model->id_producto = $intId;
-        $model->cantidad_producto = $intCantidad;
+        $model->cantidad_producto = $request->cantidad_producto;
+        $model->total = $request->cantidad_producto * $request->precio;
+        
+        
+
+        
         $model->save();
             //dd($model);
 

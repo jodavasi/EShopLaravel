@@ -36,7 +36,7 @@
 
                      </ul> 
                      <div class = "botton">
-                     <button class="primary-btn" type="submit"><span>Guardar</span><span class="lnr lnr-arrow-right"></span></button>
+                     <button class="primary-btn" type="submit"><span>Desplegar</span><span class="lnr lnr-arrow-right"></span></button>
                      </div>              
                     </div>
              </div>
@@ -76,14 +76,18 @@
                             <li class="mb-3" id = "categoria_id{{ $producto->categoria_id }}">
                             <i class="fa fa-check mr-2 text-primary"></i> identificador de la Categoría: {{ $producto->categoria_id }}</li>
                             
+                            
+                            
                            
                      </ul> 
                      <div class = "botton">
                          <form method="POST" action="{{route('ventas.store', $producto)}}">
                             {{ csrf_field() }}
                             <input id="id_producto" name="id_producto" type="hidden" value="{{$producto->id}}">
-                            <input id="cantidad_producto" name="cantidad_producto" type="hidden" value="1">
-                            <button class="primary-btn" type="submit"><span>Añadir al Carrito</span><span class="lnr lnr-arrow-right"></span></button>
+                            <i class="fa fa-check mr-2 text-primary"></i> Cantidad</li>
+                            <br><input type="number" id ="cantidad_producto" name="cantidad_producto" min="1" max="{{ $producto->stock }}" value="1"></li>
+                            <input type="hidden" id ="precio" name="precio" value="{{ $producto->precio }}">
+                            <br><br><button class="primary-btn" type="submit"><span>Añadir al Carrito</span><span class="lnr lnr-arrow-right"></span></button>
                          </form>
 
 
