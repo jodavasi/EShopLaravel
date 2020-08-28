@@ -27,6 +27,7 @@ crossorigin="anonymous">
 
                       <li class="menu-item"><a href="{{ route('ventas.index') }}">PRODUCTOS</a></li>
                       <li class="menu-item"><a href="{{ route('carrito.index') }}">CARRITO</a></li>
+                      <li class="menu-item"><a href="{{ route('compra.index') }}">COMPRAS</a></li>
                       <li class="menu-item"><a href="">ESTADISTICA</a></li>
                       
                       @guest

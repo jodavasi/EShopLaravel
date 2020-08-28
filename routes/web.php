@@ -27,5 +27,6 @@ Route::resource('categorias', 'CategoriaController');
 Route::resource('productos', 'ProductoController');
 Route::resource('ventas', 'CarritoController');
 Route::resource('carrito', 'CarritoUsuarioController');
+Route::resource('compra', 'FacturaController');
 
 

@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Factura;
-use App\Producto;
-use App\Carrito;
-
+use App\EstadisticaUsuarios;
 use Illuminate\Http\Request;
 
-class FacturaController extends Controller
+class EstadisticaUsuariosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,25 +14,8 @@ class FacturaController extends Controller
      */
     public function index()
     {
-        $id = auth()->user()->id;
-        $total = 0;
-        $cantidad = 0;
-        $facturas = Factura::where('cliente_id',$id)->get();
-        foreach ($facturas as $factura) {
-            $total += $factura->total;
-        }
-        $productosComprados = []; 
-        foreach ($facturas as $producto ) {
-            array_push($productosComprados,Producto::where('id',$producto->item_id)->get());
-
-        }
-        if(count($productosComprados)){
-            return view('compra.index',compact('productosComprados', 'facturas'));
-        }
-        return view('compra.index');
+        //
     }
-
-    
 
     /**
      * Show the form for creating a new resource.
@@ -61,10 +41,10 @@ class FacturaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Factura  $factura
+     * @param  \App\EstadisticaUsuarios  $estadisticaUsuarios
      * @return \Illuminate\Http\Response
      */
-    public function show(Factura $factura)
+    public function show(EstadisticaUsuarios $estadisticaUsuarios)
     {
         //
     }
@@ -72,10 +52,10 @@ class FacturaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Factura  $factura
+     * @param  \App\EstadisticaUsuarios  $estadisticaUsuarios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Factura $factura)
+    public function edit(EstadisticaUsuarios $estadisticaUsuarios)
     {
         //
     }
@@ -84,10 +64,10 @@ class FacturaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Factura  $factura
+     * @param  \App\EstadisticaUsuarios  $estadisticaUsuarios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Factura $factura)
+    public function update(Request $request, EstadisticaUsuarios $estadisticaUsuarios)
     {
         //
     }
@@ -95,10 +75,10 @@ class FacturaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Factura  $factura
+     * @param  \App\EstadisticaUsuarios  $estadisticaUsuarios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Factura $factura)
+    public function destroy(EstadisticaUsuarios $estadisticaUsuarios)
     {
         //
     }

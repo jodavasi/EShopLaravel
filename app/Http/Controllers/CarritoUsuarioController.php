@@ -26,7 +26,7 @@ class CarritoUsuarioController extends Controller
         if(count($productosCarritos)){
             return view('carrito.index',compact('productosCarritos', 'carritos','total'));
         }
-        return view('carrito.index');
+        return view('carrito.index', compact('total'));
     }
 
     public function destroy($id)
@@ -42,6 +42,7 @@ class CarritoUsuarioController extends Controller
 
     public function store()
     {
+        $hoy = date("j/n/Y"); 
         $i = 0;
         $id = auth()->user()->id;
         $carritos = Carrito::where('id_cliente',$id)->get();
@@ -56,6 +57,7 @@ class CarritoUsuarioController extends Controller
                 $model->item_id = $producto->id;
                 $model->cliente_id = $id;
                 $model->item_cantidad = $carritos[$i]->cantidad_producto;
+                $model->fecha = $hoy;
                 $model->save();
                 $i++;
             }
