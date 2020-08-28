@@ -1,4 +1,4 @@
-@extends('layouts.appDashAdmin')
+@extends('layouts.appDashUser')
 
 @section('content')
 
@@ -10,98 +10,57 @@
 </div>
 @endif
 
-<section>
-    <form method="POST" action="{{route('categorias.store')}}">
-        {{ csrf_field() }}
+<section class="sectionForm">
+    
+    
      <div class="container py-5">
          <div class="row text-center align-items-end">
 
          
-             <div class="col-lg-4 mb-5 mb-lg-0" id ="divv">
+             <div class="col-lg-12 mb-5 mb-lg-0" id ="divv">
                  <div class="bg-white p-5 rounded-lg shadow">
-                     <h3 class="h1 font-weight-bold">Categoria</h3>
-                     <div class="custom-separator my-4 mx-auto bg-warning"></div>
-                     <ul class="list-unstyled my-5 text-small text-left">
-                         <li class="mb-3"> <i class="fa fa-check mr-2 text-primary"></i> Nombre
-                        <input type="text" id ="input" name="nombre"></li>
-                     </ul> 
-                     <div class = "botton">
-                     <button class="primary-btn" type="submit"><span>Guardar</span><span class="lnr lnr-arrow-right"></span></button>
-                     </div>              
+                     <h3 class="h1 font-weight-bold">C A R R I T O</h3>
+                                  
                     </div>
              </div>
             
          </div>
      </div>
-    </form>
  </section>
 
-<section>
+ <section>
      <div class="container py-5">
-         <h1 class="text-center pricing">C A T E G O R I A S</h1> <br>
          <div class="row text-center align-items-end">
              
-            @if (!empty($categorias))
+            @if (!empty($productosCarritos))
 
-            @foreach($categorias as $categoria)
+            @foreach($productosCarritos as $productos)
+            @foreach($productos as $producto)
              <div class="col-lg-4 mb-5 mb-lg-0" id ="divv">
                  <div class="bg-white p-5 rounded-lg shadow">
-                     <h2 class="h3 font-weight-bold">{{ $categoria->nombre }}</h2>
+                     <li><img style="height: 100px; width: 100px" class="card-img-top rounded-circle" src="imagenes/{{ $producto->imagen }}" alt=""> </li>
                      <div class="custom-separator my-4 mx-auto bg-warning"></div>
-                     <ul class="list-unstyled my-5 text-small text-left">
-                         <li class="mb-3" id = "nombre{{ $categoria->nombre }}"> <i class="fa fa-check mr-2 text-primary"></i> {{ $categoria->nombre }}</li>
+                     <ul class="list-unstyled my-5 text-small text-center">
+                            <li class="mb-3" id = "nombre{{ $producto->nombre }}">
+                            <h2>{{ $producto->nombre }}</h2>
+                            <li class="mb-3" id = "precio{{ $producto->precio }}">
+                            <i class="fa fa-check mr-2 text-primary"></i> Precio: {{ $producto->precio }} $</li>
+                            
                      </ul> 
                      <div class = "botton">
-                     <button class="primary-btn"  data-toggle="modal" data-target= "#editarcategoria{{ $categoria->id }}"  >
-                         <span>Edit</span><span class="lnr lnr-arrow-right"></span></button>
-                         <form method="POST" action="{{route('categorias.destroy', $categoria)}}">
+                     <form method="POST" action="{{route('carrito.destroy', $producto->id)}}">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                     <button class="primary-btn" type="submit"><span>Delete</span><span class="lnr lnr-arrow-right"></span></button>
+                     <button class="primary-btn" type="submit"><span>Eliminar</span><span class="lnr lnr-arrow-right"></span></button>
                          </form>
 
-                        <!-- Modal -->
-                        <form method="POST" action="{{route('categorias.update', $categoria->id)}}">
-                        {{ csrf_field() }}
-                        {{ method_field('PUT') }}
-                        <div class="modal fade" id="editarcategoria{{ $categoria->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                
-                            <!-- content modal -->
-                            <div class="col-lg-4 mb-5 mb-lg-0" id ="divv">
-                                
-                                    <h3 class="h3 font-weight-bold">categoria</h3>
-                                    <div class="custom-separator my-4 mx-auto bg-warning"></div>
-                                    <ul class="list-unstyled my-5 text-small text-left">
-                                        <li class="mb-3"> <i class="fa fa-check mr-2 text-primary"></i> nombre
-                                        <input type="text" id ="input" value = "{{ $categoria->nombre }}" name="nombre"></li>
-                                    </ul> 
-                                                 
-                                   
-                            </div>
-                            <!-- content modal -->
-                          </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="primary-btn"> <span>Cancel</span><span class="lnr lnr-arrow-right"></span></button>
-                                <button type="submit" class="primary-btn"> <span>Save</span><span class="lnr lnr-arrow-right"></span></button>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        </form>
-                        <!-- modal -->
+
 
                      </div>              
                     </div>
 
              </div>
+             @endforeach
             @endforeach
             @endif
          </div>

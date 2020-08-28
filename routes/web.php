@@ -26,6 +26,6 @@ Route::get('/homeAdmin', 'HomeController@index')->name('homeAdmin');
 Route::resource('categorias', 'CategoriaController');
 Route::resource('productos', 'ProductoController');
 Route::resource('ventas', 'CarritoController');
-//Route::resource('carrito', 'CarritoController');
+Route::resource('carrito', 'CarritoUsuarioController');
 
 

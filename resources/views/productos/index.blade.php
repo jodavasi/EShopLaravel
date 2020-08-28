@@ -76,7 +76,6 @@
                             <h2>{{ $producto->nombre }}</h2>
                             <li class="mb-3" id = "SKU{{ $producto->SKU }}">
                             <i class="fa fa-check mr-2 text-primary"></i> Codigo de producto: {{ $producto->SKU }}</li>
-                            <i class="fa fa-check mr-2 text-primary"></i> {{ $producto->nombre }}</li>
                             <li class="mb-3" id = "descripcion{{ $producto->descripcion }}">
                             <i class="fa fa-check mr-2 text-primary"></i> Descripción: {{ $producto->descripcion }}</li>
                             <li class="mb-3" id = "stock{{ $producto->stock }}">

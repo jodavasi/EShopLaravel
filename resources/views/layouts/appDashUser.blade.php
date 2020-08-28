@@ -26,7 +26,7 @@ crossorigin="anonymous">
                     <ol id="men">
 
                       <li class="menu-item"><a href="{{ route('ventas.index') }}">PRODUCTOS</a></li>
-                      <li class="menu-item"><a href="">CARRITO</a></li>
+                      <li class="menu-item"><a href="{{ route('carrito.index') }}">CARRITO</a></li>
                       <li class="menu-item"><a href="">ESTADISTICA</a></li>
                       
                       @guest

@@ -57,7 +57,7 @@ class CarritoController extends Controller
                 
             ]);
         $intId=(int)$request->id_producto;
-        $intCantidad=(int)$request->id_producto;
+        $intCantidad=(int)$request->cantidad_producto;
             
 
         $model = new Carrito;
@@ -67,7 +67,7 @@ class CarritoController extends Controller
         $model->save();
             //dd($model);
 
-        return redirect()->route('productos.index')->with('msg','Agregado correctamente!');
+        return redirect()->route('ventas.index')->with('msg','Se ha agregado correctamente a su carrito!');
             
             
 

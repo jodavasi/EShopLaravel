@@ -143,6 +143,7 @@ class ProductoController extends Controller
      *
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
+     * para eliminar del carrito
      */
     public function destroy(Producto $producto)
     {
