@@ -85,10 +85,11 @@
                 <div class="bg-white p-5 rounded-lg shadow">
                     <h3 class="h1 font-weight-bold">T O T A L</h3>
                     <div>
-                    <!--  -->
-                        <input type="number" id ="inputTotal" value= "{{$total}}" disabled>$</li>
+                        <input type="number" id ="inputTotal" name ="inputTotal" value="{{$total}}" disabled>$</li>
+                        
                         <form method="POST" action="{{route('carrito.store')}}">
                             {{ csrf_field() }}
+                            <input type="hidden" id ="inputTotal" name ="inputTotal" value="{{$total}}">
                             <br><button class="primary-btn" type="submit"><span>Formalizar Compra</span><span class="lnr lnr-arrow-right"></span></button>
                          </form>
                     </div>

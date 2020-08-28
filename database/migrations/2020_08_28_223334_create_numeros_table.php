@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstadisticaTable extends Migration
+class CreateNumerosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateEstadisticaTable extends Migration
      */
     public function up()
     {
-        Schema::create('estadistica', function (Blueprint $table) {
-            
+        Schema::create('numeros', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('cliente_id');
-            $table->float('total');
             $table->integer('cantidad');
+            $table->float('total');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateEstadisticaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estadistica');
+        Schema::dropIfExists('numeros');
     }
 }

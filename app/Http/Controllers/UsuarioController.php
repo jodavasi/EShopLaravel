@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\EstadisticaUsuarios;
+use App\Usuario;
 use Illuminate\Http\Request;
 
-class EstadisticaUsuariosController extends Controller
+class UsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class EstadisticaUsuariosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\EstadisticaUsuarios  $estadisticaUsuarios
+     * @param  \App\usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show(EstadisticaUsuarios $estadisticaUsuarios)
+    public function show(usuario $usuario)
     {
         //
     }
@@ -52,10 +52,10 @@ class EstadisticaUsuariosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EstadisticaUsuarios  $estadisticaUsuarios
+     * @param  \App\usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(EstadisticaUsuarios $estadisticaUsuarios)
+    public function edit(usuario $usuario)
     {
         //
     }
@@ -64,10 +64,10 @@ class EstadisticaUsuariosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EstadisticaUsuarios  $estadisticaUsuarios
+     * @param  \App\usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EstadisticaUsuarios $estadisticaUsuarios)
+    public function update(Request $request, usuario $usuario)
     {
         //
     }
@@ -75,10 +75,10 @@ class EstadisticaUsuariosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\EstadisticaUsuarios  $estadisticaUsuarios
+     * @param  \App\usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EstadisticaUsuarios $estadisticaUsuarios)
+    public function destroy(usuario $usuario)
     {
         //
     }

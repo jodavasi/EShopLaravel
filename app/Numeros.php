@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EstadisticaUsuarios extends Model
+class Numeros extends Model
 {
     protected $fillable = [
-        'cliente_id','total','cantidad'
+        'cantidad','total'
     ];
 }
