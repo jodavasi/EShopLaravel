@@ -1,0 +1,39 @@
+html, body, div {
+		margin: 0;
+		padding: 0;
+		font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+		
+#menu{
+  
+	  position: relative;
+    text-align: center;
+		margin: 50px;
+}
+		
+#menu-line{
+		display: block;
+		position: absolute;
+    left: 50%;
+    top: 25px;
+		width: 0;
+		height: 5px;
+		background-color: #6547CF
+}
+		
+ul{
+		z-index: 100;
+}
+		
+ul li {
+		display: inline-block;
+		margin-right: 30px;
+}
+		
+ul li a{
+		display: block;
+		font-size: 20px;
+		text-transform: uppercase;
+    text-decoration: none;
+		color: black;	
+}	
