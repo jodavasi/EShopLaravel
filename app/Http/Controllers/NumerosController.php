@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Numeros;
+use App\User;
 use Illuminate\Http\Request;
 
 class NumerosController extends Controller
@@ -14,7 +15,14 @@ class NumerosController extends Controller
      */
     public function index()
     {
-        //
+        $numeros = Numeros::all();
+        $users = User::all()->count();
+        $users -= 1;
+        if(count($numeros)){
+            return view('estadisticasAdmin.index',compact('numeros','users'));
+        }
+        return view('estadisticasAdmin.index',compact('numeros','users'));
+    
     }
 
     /**

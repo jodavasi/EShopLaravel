@@ -26,9 +26,9 @@ class HomeController extends Controller
         
            
         if( $request->user()->email == 'lineadan@gmail.com'){
-            return redirect()->route('categorias.index');
+            return redirect()->route('estadisticasAdmin.index');
         }else{
-            return redirect()->route('ventas.index');
+            return redirect()->route('estadisticasUser.index');
         }
         // $request->user()->authorizeRoles(['admin']);
         

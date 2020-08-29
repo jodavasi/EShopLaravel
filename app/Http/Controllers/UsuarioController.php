@@ -14,7 +14,13 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        $id = auth()->user()->id;
+        $datos = Usuario::where('usuario_id',$id)->get();
+        if(count($datos)){
+            return view('estadisticasUser.index',compact('datos'));
+        }
+        return view('estadisticasUser.index',compact('datos'));
+    
     }
 
     /**

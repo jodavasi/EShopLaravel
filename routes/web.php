@@ -28,5 +28,8 @@ Route::resource('productos', 'ProductoController');
 Route::resource('ventas', 'CarritoController');
 Route::resource('carrito', 'CarritoUsuarioController');
 Route::resource('compra', 'FacturaController');
+Route::resource('estadisticasAdmin', 'NumerosController');
+Route::resource('estadisticasUser', 'UsuarioController');
+
 
 

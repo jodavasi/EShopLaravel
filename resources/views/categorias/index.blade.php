@@ -49,7 +49,7 @@
                      <h2 class="h3 font-weight-bold">{{ $categoria->nombre }}</h2>
                      <div class="custom-separator my-4 mx-auto bg-warning"></div>
                      <ul class="list-unstyled my-5 text-small text-left">
-                         <li class="mb-3" id = "nombre{{ $categoria->nombre }}"> <i class="fa fa-check mr-2 text-primary"></i> {{ $categoria->nombre }}</li>
+                         <li class="mb-3" id = "nombre{{ $categoria->nombre }}"> <i class="fa fa-check mr-2 text-primary"></i></li>
                      </ul> 
                      <div class = "botton">
                      <button class="primary-btn"  data-toggle="modal" data-target= "#editarcategoria{{ $categoria->id }}"  >

@@ -27,9 +27,9 @@ crossorigin="anonymous">
 
                       <li class="menu-item"><a href="{{ route('productos.index') }}">PRODUCTOS</a></li>
                       <li class="menu-item"><a href="{{ route('categorias.index') }}">CATEGORIAS</a></li>
-                      <li class="menu-item"><a href="">ESTADISTICAS</a></li>
+                      <li class="menu-item"><a href="{{ route('estadisticasAdmin.index') }}">ESTADISTICAS</a></li>
                       
-                      @guest
+                      @guest    
                         <li class="menu-item">
                         <a  href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         @if (Route::has('register'))

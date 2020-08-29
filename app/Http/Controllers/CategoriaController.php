@@ -123,8 +123,7 @@ class CategoriaController extends Controller
     public function destroy(Categoria $categoria)
     {
         
-        $productos = Producto::where('categoria_id',$categoria)->get();
-        
+        $productos = Producto::where('categoria_id',$categoria->id)->get();
         if($productos->isEmpty()){
             $categoria->delete();
             return redirect()->route('categorias.index')->with('msg','Eliminado correctamente');

@@ -84,14 +84,11 @@ class CarritoUsuarioController extends Controller
             $i++;
                 
         }
-        
         $totalProducto += $request->inputTotal;
-        
         $modelEst->total = $totalProducto;
         $modelEst->cantidad += $cantidadGlobal;
         $modelEst->update();
-
-        $modelGeneral->total += $totalProducto;
+        $modelGeneral->total += $request->inputTotal;
         $modelGeneral->cantidad += $cantidadGlobal;
         $modelGeneral->update();
         
